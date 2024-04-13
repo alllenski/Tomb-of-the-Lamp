@@ -4,3 +4,7 @@
 
 [node name="Level" instance=ExtResource("1_5uw0v")]
 next_level_path = "res://scenes/levels/pushing.tscn"
+
+[node name="Exit" parent="World/Entities" index="1" node_paths=PackedStringArray("buttons")]
+buttons = []
+is_pushable = false

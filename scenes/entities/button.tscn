@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://3641x031ljgd"]
+[gd_scene load_steps=7 format=3 uid="uid://3641x031ljgd"]
 
 [ext_resource type="PackedScene" uid="uid://lio1o8hlak3i" path="res://scenes/entities/entity.tscn" id="1_v6xka"]
 [ext_resource type="Script" path="res://scenes/entities/button.gd" id="2_33tfi"]
@@ -7,6 +7,10 @@
 [sub_resource type="AtlasTexture" id="AtlasTexture_sa5fa"]
 atlas = ExtResource("2_du00g")
 region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68ss1"]
+atlas = ExtResource("2_du00g")
+region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4yigj"]
 resource_local_to_scene = true
@@ -18,13 +22,24 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68ss1")
+}],
+"loop": true,
+"name": &"pressed",
+"speed": 5.0
 }]
 
 [node name="Button" instance=ExtResource("1_v6xka")]
+z_index = 0
+collision_layer = 0
 script = ExtResource("2_33tfi")
 
 [node name="AnimatedSprite" parent="." index="2"]
 sprite_frames = SubResource("SpriteFrames_4yigj")
+animation = &"pressed"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]
