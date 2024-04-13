@@ -151,7 +151,10 @@ unique_name_in_owner = true
 z_index = 0
 y_sort_enabled = true
 position = Vector2(104, 88)
+dialogue = ""
 
-[node name="Exit" parent="World/Entities" node_paths=PackedStringArray("buttons") instance=ExtResource("6_nmnl4")]
+[node name="Exit" parent="World/Entities" instance=ExtResource("6_nmnl4")]
 position = Vector2(216, 88)
-buttons = []
+dialogue = ""
+
+[node name="Effects" type="Node2D" parent="World"]

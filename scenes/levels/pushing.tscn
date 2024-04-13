@@ -11,11 +11,10 @@ layer_0/tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608,
 
 [node name="Player" parent="World/Entities" index="0"]
 position = Vector2(168, 120)
+is_pushable = null
 
-[node name="Exit" parent="World/Entities" index="1" node_paths=PackedStringArray("buttons")]
+[node name="Exit" parent="World/Entities" index="1"]
 position = Vector2(168, 40)
-buttons = []
-is_pushable = false
 
 [node name="Block" parent="." index="2" instance=ExtResource("2_gdx58")]
 position = Vector2(152, 56)

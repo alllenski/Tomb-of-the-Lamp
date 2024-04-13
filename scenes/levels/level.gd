@@ -3,6 +3,8 @@ extends Node
 
 @onready var transition = $Transition
 @onready var player = $"%Player"
+@onready var entities = $World/Entities
+@onready var effects = $World/Effects
 
 @export var next_level_path : String
 

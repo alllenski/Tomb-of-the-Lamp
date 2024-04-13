@@ -19,7 +19,9 @@ func _ready():
 		#monitoring = false
 
 func _on_area_entered(area):
-	if area.name == "Player":
+	await get_tree().physics_frame
+	check_buttons()
+	if area.name == "Player" and is_open:
 		Globals.level.next_level()
 	#on_sound.play()
 	#$AnimatedSprite.visible = false

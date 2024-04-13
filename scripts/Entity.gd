@@ -5,14 +5,15 @@ extends Area2D
 
 @export var is_pushable = false
 
+@export_multiline var dialogue : String
 
 var move_priority := 0
 
 var tile_size = 16
-var directions = {"ui_right": Vector2.RIGHT,
-			"ui_left": Vector2.LEFT,
-			"ui_up": Vector2.UP,
-			"ui_down": Vector2.DOWN,}
+var directions = {"right": Vector2.RIGHT,
+			"left": Vector2.LEFT,
+			"up": Vector2.UP,
+			"down": Vector2.DOWN,}
 
 var history := []
 			
