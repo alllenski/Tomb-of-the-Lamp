@@ -26,9 +26,9 @@ func set_shader_value(value: float):
 	
 	
 func _input(event):
-	#if event.is_action_released("restart"):
-		#ending = true
-		#get_tree().reload_current_scene()
+	if event.is_action_released("restart"):
+		ending = true
+		get_tree().reload_current_scene()
 	if event.is_action_released("reverse"):
 		if not ending:
 			get_tree().call_group("Entities", "reverse")
