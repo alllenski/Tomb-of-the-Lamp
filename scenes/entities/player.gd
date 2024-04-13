@@ -11,8 +11,6 @@ var is_controllable = true
 func _unhandled_input(event):
 	if not is_controllable:
 		return
-#	if tween.is_active() or !Globals.joe.done_tweening or !Globals.alex.done_tweening:
-#		return
 	if event.is_action_released("wait"):
 		get_tree().call_group("Entities", "act")
 		return

@@ -46,6 +46,6 @@ func next_level():
 	
 func change_scene():
 	if next_level_path:
-		get_tree().change_scene(next_level_path)
+		get_tree().change_scene_to_file(next_level_path)
 	else:
 		get_tree().reload_current_scene()
