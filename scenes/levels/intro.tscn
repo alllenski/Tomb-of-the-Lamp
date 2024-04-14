@@ -6,7 +6,4 @@
 next_level_path = "res://scenes/levels/pushing.tscn"
 
 [node name="Player" parent="World/Entities" index="0"]
-dialogue = ""
-
-[node name="Exit" parent="World/Entities" index="1"]
-dialogue = ""
+djinn_scene = null

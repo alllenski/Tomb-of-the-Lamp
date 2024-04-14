@@ -1,9 +1,11 @@
 class_name Entity
 extends Area2D
 
-@onready var ray_cast = $RayCast2D
+@onready var ray_cast := $RayCast2D
 
-@export var is_pushable = false
+@export var is_pushable := false
+@export var is_explosive := false
+@export var explosion_scene : PackedScene
 
 @export_multiline var dialogue : String
 
@@ -27,7 +29,10 @@ func check(direction):
 		var collider = ray_cast.get_collider()
 		if collider.name == "Walls":
 			return false
-		if collider.is_pushable and collider.check(direction):
+		elif collider.name == "Holes":
+			if is_pushable:
+				return true
+		elif collider.is_pushable and collider.check(direction):
 			collider.move(direction)
 			return true
 		else:
@@ -47,3 +52,22 @@ func reverse():
 
 func record():
 	history.append(global_position)
+
+
+func resolve():
+	if not is_explosive:
+		return
+	ray_cast.target_position = Vector2.ONE
+	ray_cast.hit_from_inside = true
+	ray_cast.force_raycast_update()
+	if ray_cast.is_colliding():
+		var collider = ray_cast.get_collider()
+		if collider.name == "Holes":
+			pass
+		elif not collider.is_explosive:
+			return
+		var explosion = explosion_scene.instantiate()
+		explosion.global_position = global_position
+		Globals.level.effects.add_child(explosion)
+		queue_free()
+	ray_cast.hit_from_inside = false

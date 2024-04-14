@@ -1,9 +1,15 @@
 extends Entity
+class_name Djinn
 	
 @export_enum("left", "right", "down", "up") var direction : String = "left"
-@export var explosion_scene : PackedScene
+
+
+var is_stunned := false
 
 func act():
+	if is_stunned:
+		is_stunned = false
+		return
 	if check(direction):
 		move(direction)
 	else:
@@ -28,14 +34,8 @@ func move(direction):
 	# move_sound.play()
 
 
-func resolve():
-	ray_cast.target_position = directions[direction]
-	ray_cast.hit_from_inside = true
-	ray_cast.force_raycast_update()
-	if ray_cast.is_colliding():
-		var explosion = explosion_scene.instantiate()
-		explosion.global_position = global_position
-		Globals.level.effects.add_child(explosion)
-		queue_free()
-	ray_cast.hit_from_inside = false
-
+func pull(target_position : Vector2):
+	var movement := target_position - position
+	movement = movement.normalized()
+	global_position += movement * tile_size
+	is_stunned = true
