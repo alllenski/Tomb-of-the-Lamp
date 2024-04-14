@@ -1,9 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://coum446y3ec55"]
+[gd_scene load_steps=3 format=3 uid="uid://coum446y3ec55"]
 
 [ext_resource type="PackedScene" uid="uid://el2kixnbnikd" path="res://scenes/levels/level.tscn" id="1_5uw0v"]
+[ext_resource type="Texture2D" uid="uid://bdmpor6yvi3kv" path="res://sprites/sprite_tutorial.png" id="2_kq2sq"]
 
 [node name="Level" instance=ExtResource("1_5uw0v")]
 next_level_path = "res://scenes/levels/pushing.tscn"
 
 [node name="Player" parent="World/Entities" index="0"]
 djinn_scene = null
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="2"]
+texture_filter = 1
+position = Vector2(160, 40)
+texture = ExtResource("2_kq2sq")
