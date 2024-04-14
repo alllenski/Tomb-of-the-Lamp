@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://buoftdkmwb7or"]
+
+[ext_resource type="PackedScene" uid="uid://el2kixnbnikd" path="res://scenes/levels/level.tscn" id="1_t3vt4"]
+[ext_resource type="PackedScene" uid="uid://dctsgboc6suuu" path="res://scenes/entities/block.tscn" id="2_okk3m"]
+[ext_resource type="PackedScene" uid="uid://3641x031ljgd" path="res://scenes/entities/button.tscn" id="3_gtgut"]
+[ext_resource type="PackedScene" uid="uid://b7ikxeebdvngl" path="res://scenes/entities/djinn.tscn" id="4_btcqu"]
+
+[node name="Level" instance=ExtResource("1_t3vt4")]
+next_level_path = "res://scenes/levels/pulled.tscn"
+
+[node name="Walls" parent="World" index="0"]
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 262144, 0, 0, 327680, 0, 0, 393216, 0, 0, 458752, 131072, 0, 524288, 65536, 0, 589824, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 720915, 0, 0, 720914, 0, 0, 720913, 0, 0, 720912, 0, 0, 720911, 0, 0, 720910, 0, 0, 720909, 0, 0, 720908, 0, 0, 720907, 0, 0, 720906, 0, 0, 720905, 0, 0, 720904, 0, 0, 720903, 0, 0, 720902, 0, 0, 720901, 0, 0, 720900, 0, 0, 720899, 0, 0, 720898, 0, 0, 720897, 0, 0, 720896, 0, 0, 589843, 0, 0, 524307, 65536, 0, 458771, 131072, 0, 393235, 0, 0, 327699, 0, 0, 327698, 0, 0, 262162, 0, 0, 196626, 0, 0, 131090, 0, 0, 65555, 0, 0, 19, 0, 0, 131091, 0, 0, 196627, 0, 0, 262163, 0, 0, 18, 0, 0, 17, 0, 0, 16, 0, 0, 15, 0, 0, 14, 0, 0, 13, 0, 0, 12, 0, 0, 11, 0, 0, 10, 0, 0, 9, 0, 0, 8, 0, 0, 7, 0, 0, 6, 0, 0, 5, 0, 0, 4, 0, 0, 3, 0, 0, 2, 0, 0, 1, 0, 0, 65538, 0, 0, 65537, 0, 0, 131073, 0, 0, 196609, 0, 0, 262145, 0, 0, 327681, 0, 0, 393217, 196608, 1, 458753, 131072, 0, 524289, 65536, 0, 589825, 0, 0, 589826, 0, 0, 458754, 131072, 1, 393218, 196608, 0, 327682, 0, 0, 262146, 0, 0, 196610, 0, 0, 131074, 0, 0, 327696, 0, 0, 65552, 0, 0, 65553, 0, 0, 131089, 0, 0, 196625, 0, 0, 262161, 0, 0, 327697, 0, 0, 589842, 0, 0, 524306, 65536, 0, 458770, 131072, 0, 393234, 0, 0, 65554, 0, 0, 327683, 0, 0, 65541, 0, 0, 65540, 0, 0, 65539, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 65549, 0, 0, 65550, 0, 0, 65551, 0, 0, 327684, 196608, 3, 327685, 65536, 2, 327686, 131072, 2, 327687, 131072, 2, 327688, 131072, 2, 327689, 131072, 2, 327690, 131072, 2, 327691, 131072, 2, 327692, 131072, 2, 327693, 65536, 2, 327694, 262144, 1, 327695, 0, 0, 196611, 0, 0, 262147, 0, 0, 196612, 196608, 3, 262148, 196608, 3, 196613, 131072, 1, 262149, 131072, 2, 196614, 65536, 1, 262150, 131072, 2, 196615, 65536, 1, 262151, 131072, 2, 196616, 131072, 1, 262152, 131072, 2, 196617, 131072, 1, 262153, 65536, 2, 196618, 65536, 1, 262154, 131072, 2, 196619, 65536, 1, 262155, 131072, 2, 196620, 65536, 1, 262156, 131072, 2, 196621, 131072, 1, 262157, 131072, 2, 196622, 262144, 1, 262158, 262144, 1, 196623, 0, 0, 262159, 0, 0, 196624, 0, 0, 262160, 0, 0, 393219, 131072, 0, 458755, 65536, 1, 393220, 131072, 0, 458756, 65536, 1, 393221, 131072, 0, 458757, 65536, 1, 393222, 131072, 0, 458758, 131072, 1, 393223, 0, 3, 458759, 65536, 1, 393224, 65536, 2, 458760, 131072, 2, 393225, 131072, 2, 458761, 0, 2, 393226, 65536, 2, 458762, 131072, 2, 393227, 131072, 0, 458763, 65536, 1, 393228, 131072, 0, 458764, 65536, 1, 393229, 131072, 0, 458765, 65536, 1, 393230, 131072, 0, 458766, 131072, 1, 393231, 196608, 0, 458767, 65536, 1, 393232, 131072, 0, 458768, 131072, 1, 393233, 262144, 1, 458769, 131072, 0, 524305, 65536, 0, 131077, 131072, 0, 131076, 196608, 1, 131075, 0, 0, 131078, 131072, 0, 131079, 196608, 0, 131080, 131072, 0, 131081, 196608, 0, 131082, 131072, 0, 131083, 196608, 0, 131084, 131072, 0, 131085, 131072, 0, 131086, 262144, 1, 131087, 0, 0, 131088, 0, 0, 589830, 0, 0, 589829, 0, 0, 589828, 0, 0, 589827, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0)
+
+[node name="Holes" parent="World" index="1"]
+layer_0/tile_data = PackedInt32Array(524290, 65536, 0, 524291, 65536, 0, 524292, 65536, 0, 524293, 65536, 0, 524294, 65536, 0, 524295, 65536, 0, 524296, 65536, 0, 524297, 65536, 0, 524298, 65536, 0, 524299, 65536, 0, 524300, 65536, 0, 524301, 65536, 0, 524302, 65536, 0, 524303, 65536, 0, 524304, 65536, 0)
+
+[node name="Player" parent="World/Entities" index="0"]
+position = Vector2(120, 120)
+has_lamp = true
+
+[node name="Exit" parent="World/Entities" index="1" node_paths=PackedStringArray("buttons")]
+position = Vector2(152, 120)
+buttons = [NodePath("../Button"), NodePath("../Button2"), NodePath("../Button3"), NodePath("../Button4")]
+
+[node name="Djinn" parent="World/Entities" index="2" instance=ExtResource("4_btcqu")]
+position = Vector2(88, 72)
+
+[node name="Djinn2" parent="World/Entities" index="3" instance=ExtResource("4_btcqu")]
+position = Vector2(216, 72)
+
+[node name="Djinn3" parent="World/Entities" index="4" instance=ExtResource("4_btcqu")]
+position = Vector2(104, 88)
+
+[node name="Djinn4" parent="World/Entities" index="5" instance=ExtResource("4_btcqu")]
+position = Vector2(136, 56)
+direction = "right"
+
+[node name="Block" parent="World/Entities" index="6" instance=ExtResource("2_okk3m")]
+position = Vector2(120, 56)
+
+[node name="Block2" parent="World/Entities" index="7" instance=ExtResource("2_okk3m")]
+position = Vector2(168, 72)
+
+[node name="Block3" parent="World/Entities" index="8" instance=ExtResource("2_okk3m")]
+position = Vector2(136, 88)
+
+[node name="Block4" parent="World/Entities" index="9" instance=ExtResource("2_okk3m")]
+position = Vector2(168, 104)
+
+[node name="Block5" parent="World/Entities" index="10" instance=ExtResource("2_okk3m")]
+position = Vector2(152, 120)
+
+[node name="Button" parent="World/Entities" index="11" instance=ExtResource("3_gtgut")]
+position = Vector2(152, 104)
+
+[node name="Button2" parent="World/Entities" index="12" instance=ExtResource("3_gtgut")]
+position = Vector2(152, 88)
+
+[node name="Button3" parent="World/Entities" index="13" instance=ExtResource("3_gtgut")]
+position = Vector2(152, 72)
+
+[node name="Button4" parent="World/Entities" index="14" instance=ExtResource("3_gtgut")]
+position = Vector2(152, 56)

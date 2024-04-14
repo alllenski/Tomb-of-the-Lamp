@@ -43,6 +43,3 @@ dialogue = ""
 [node name="Block4" parent="World/Entities" index="8" instance=ExtResource("3_8oaqv")]
 position = Vector2(104, 72)
 dialogue = ""
-
-[node name="Effects" parent="World" index="3"]
-z_index = 1

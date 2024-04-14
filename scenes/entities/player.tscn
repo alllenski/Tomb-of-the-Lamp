@@ -182,6 +182,7 @@ priority = 1
 script = ExtResource("2_trpix")
 djinn_scene = null
 has_lamp = false
+direction = "right"
 
 [node name="AnimatedSprite" parent="." index="2"]
 z_index = 1

@@ -6,8 +6,10 @@ extends Entity
 # @onready var fail_move_sound = $FailMoveSound
 
 @export var djinn_scene : PackedScene
-@export var has_lamp := false	
-	
+@export var has_lamp := false
+
+@export_enum("left", "right", "down", "up") var direction : String = "right"
+
 var has_ghost := false
 	
 var time := 0.0	
@@ -16,7 +18,8 @@ var is_controllable = true
 
 
 func _ready():
-	if has_lamp:
+	sprite.play(direction)
+	if has_ghost:
 		halo_sprite.show()
 	else:
 		halo_sprite.hide()
@@ -26,10 +29,16 @@ func _unhandled_input(event):
 	if not is_controllable:
 		return
 	if event.is_action_released("wait"):
+		get_tree().call_group("Entities", "record")
+		await get_tree().physics_frame
 		get_tree().call_group("Entities", "act")
+		await get_tree().physics_frame
+		get_tree().call_group("Entities", "resolve")
 		return
 	if event.is_action_released("action"):
 		if interact(sprite.animation):
+			get_tree().call_group("Entities", "record")
+			await get_tree().physics_frame
 			get_tree().call_group("Entities", "act")
 			await get_tree().physics_frame
 			get_tree().call_group("Entities", "resolve")

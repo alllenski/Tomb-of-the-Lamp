@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://br0konske4yfe"]
+[gd_scene load_steps=5 format=3 uid="uid://esfjo4wd7yow"]
 
-[ext_resource type="PackedScene" uid="uid://el2kixnbnikd" path="res://scenes/levels/level.tscn" id="1_g244o"]
-[ext_resource type="PackedScene" uid="uid://3641x031ljgd" path="res://scenes/entities/button.tscn" id="2_q0sbf"]
-[ext_resource type="PackedScene" uid="uid://dctsgboc6suuu" path="res://scenes/entities/block.tscn" id="2_uhps5"]
-[ext_resource type="PackedScene" uid="uid://b7ikxeebdvngl" path="res://scenes/entities/djinn.tscn" id="3_farsh"]
+[ext_resource type="PackedScene" uid="uid://el2kixnbnikd" path="res://scenes/levels/level.tscn" id="1_o1u0o"]
+[ext_resource type="PackedScene" uid="uid://3641x031ljgd" path="res://scenes/entities/button.tscn" id="2_u28ro"]
+[ext_resource type="PackedScene" uid="uid://b7ikxeebdvngl" path="res://scenes/entities/djinn.tscn" id="3_ui3e7"]
+[ext_resource type="PackedScene" uid="uid://dctsgboc6suuu" path="res://scenes/entities/block.tscn" id="4_fqk35"]
 
-[node name="Level" instance=ExtResource("1_g244o")]
+[node name="Level" instance=ExtResource("1_o1u0o")]
 next_level_path = "res://scenes/levels/altar.tscn"
 
 [node name="Walls" parent="World" index="0"]
@@ -19,26 +19,26 @@ djinn_scene = null
 position = Vector2(152, 56)
 buttons = [NodePath("../Button"), NodePath("../Button2")]
 
-[node name="Button" parent="World/Entities" index="2" instance=ExtResource("2_q0sbf")]
+[node name="Button" parent="World/Entities" index="2" instance=ExtResource("2_u28ro")]
 position = Vector2(264, 40)
 collision_mask = 1
 
-[node name="Button2" parent="World/Entities" index="3" instance=ExtResource("2_q0sbf")]
+[node name="Button2" parent="World/Entities" index="3" instance=ExtResource("2_u28ro")]
 position = Vector2(200, 136)
 collision_mask = 1
 
-[node name="Djinn" parent="World/Entities" index="4" instance=ExtResource("3_farsh")]
+[node name="Djinn" parent="World/Entities" index="4" instance=ExtResource("3_ui3e7")]
 position = Vector2(264, 136)
 collision_layer = 1
 collision_mask = 1
 direction = "up"
 
-[node name="Djinn2" parent="World/Entities" index="5" instance=ExtResource("3_farsh")]
+[node name="Djinn2" parent="World/Entities" index="5" instance=ExtResource("3_ui3e7")]
 position = Vector2(200, 136)
 collision_layer = 1
 collision_mask = 1
 
-[node name="Block" parent="World/Entities" index="6" instance=ExtResource("2_uhps5")]
+[node name="Block" parent="World/Entities" index="6" instance=ExtResource("4_fqk35")]
 position = Vector2(120, 56)
 collision_layer = 1
 collision_mask = 1
