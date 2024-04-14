@@ -29,6 +29,7 @@ func _unhandled_input(event):
 	if not is_controllable:
 		return
 	if event.is_action_released("wait"):
+		Globals.sfx.play("Step")
 		get_tree().call_group("Entities", "record")
 		await get_tree().physics_frame
 		get_tree().call_group("Entities", "act")
@@ -47,6 +48,7 @@ func _unhandled_input(event):
 		if event.is_action_released(direction):
 			get_tree().call_group("Entities", "record")
 			if check(direction):
+				Globals.sfx.play("Step")
 				move(direction)
 				await get_tree().physics_frame
 				get_tree().call_group("Entities", "act")
@@ -77,6 +79,7 @@ func interact(direction):
 		elif collider is Djinn and not has_ghost and has_lamp:
 			collider.unsummon()
 			regain_ghost()
+			Globals.sfx.play("Unsummon")
 			return true
 		elif collider.name == "Lamp":
 			has_lamp = true
@@ -87,6 +90,7 @@ func interact(direction):
 			return true
 	elif has_ghost:
 		summon(position + directions[direction] * tile_size)
+		Globals.sfx.play("Summon")
 		return true
 	if has_lamp:
 		ray_cast.target_position = directions[direction] * tile_size * 16
@@ -97,12 +101,13 @@ func interact(direction):
 			var collider = ray_cast.get_collider()
 			if collider is Djinn:
 				collider.pull(position)
+				Globals.sfx.play("Pull")
 				return true
 	return false
 	
 
 func talk(dialogue):
-	print(dialogue)
+	Globals.level.display_text(dialogue)
 
 
 func summon(target_position):

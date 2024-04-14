@@ -21,3 +21,4 @@ position = Vector2(152, 88)
 
 [node name="Block9" parent="World/Entities" index="3" instance=ExtResource("3_mxpwo")]
 position = Vector2(168, 56)
+dialogue = "lonely"

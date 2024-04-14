@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://el2kixnbnikd"]
+[gd_scene load_steps=12 format=3 uid="uid://el2kixnbnikd"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_tubu1"]
 [ext_resource type="Shader" path="res://shaders/transition.gdshader" id="2_j8s60"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b7uwpj8f0u7xm" path="res://scenes/entities/player.tscn" id="5_ceoa4"]
 [ext_resource type="PackedScene" uid="uid://dgyw41mcdc3ni" path="res://scenes/entities/exit.tscn" id="6_nmnl4"]
 [ext_resource type="PackedScene" uid="uid://b7ikxeebdvngl" path="res://scenes/entities/djinn.tscn" id="6_p77wm"]
+[ext_resource type="FontFile" uid="uid://ctw1cr1c3jq65" path="res://fonts/monogram-extended-italic.ttf" id="8_8s3al"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d0xmf"]
 shader = ExtResource("2_j8s60")
@@ -232,12 +233,27 @@ position = Vector2(104, 88)
 collision_layer = 1
 collision_mask = 1
 djinn_scene = ExtResource("6_p77wm")
-dialogue = ""
 
 [node name="Exit" parent="World/Entities" instance=ExtResource("6_nmnl4")]
 position = Vector2(216, 88)
 collision_mask = 1
-dialogue = ""
 
 [node name="Effects" type="Node2D" parent="World"]
 z_index = 1
+
+[node name="Dialogue" type="RichTextLabel" parent="."]
+texture_filter = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -20.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0.639216, 0.988235, 0.721569, 1)
+theme_override_fonts/normal_font = ExtResource("8_8s3al")
+bbcode_enabled = true
+scroll_active = false

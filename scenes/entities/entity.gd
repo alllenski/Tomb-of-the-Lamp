@@ -11,7 +11,7 @@ var puff_scene = preload("res://scenes/effects/puff.tscn")
 
 
 
-@export_multiline var dialogue : String
+@export_multiline var dialogue := ""
 
 var move_priority := 0
 
@@ -76,5 +76,6 @@ func resolve():
 		var explosion = explosion_scene.instantiate()
 		explosion.global_position = global_position
 		Globals.level.effects.add_child(explosion)
+		Globals.sfx.play("Explosion")
 		queue_free()
 	ray_cast.hit_from_inside = false

@@ -25,18 +25,22 @@ buttons = [NodePath("../Button"), NodePath("../Button2"), NodePath("../Button3")
 [node name="Djinn" parent="World/Entities" index="2" instance=ExtResource("2_815k0")]
 position = Vector2(104, 104)
 direction = "up"
+dialogue = "HATRED"
 
 [node name="Djinn3" parent="World/Entities" index="3" instance=ExtResource("2_815k0")]
 position = Vector2(200, 120)
 direction = "down"
+dialogue = "SUFFERING"
 
 [node name="Djinn4" parent="World/Entities" index="4" instance=ExtResource("2_815k0")]
 position = Vector2(200, 56)
 direction = "up"
+dialogue = "BETRAYER"
 
 [node name="Djinn2" parent="World/Entities" index="5" instance=ExtResource("2_815k0")]
 position = Vector2(104, 40)
 direction = "down"
+dialogue = "TRAITOR"
 
 [node name="Button" parent="World/Entities" index="6" instance=ExtResource("4_vm0qs")]
 position = Vector2(104, 136)

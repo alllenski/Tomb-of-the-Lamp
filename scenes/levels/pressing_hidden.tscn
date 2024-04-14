@@ -36,33 +36,40 @@ collision_mask = 1
 position = Vector2(136, 56)
 collision_layer = 1
 collision_mask = 1
+dialogue = "don't"
 
 [node name="Block3" parent="World/Entities" index="7" instance=ExtResource("3_im01n")]
 position = Vector2(168, 136)
 collision_layer = 1
 collision_mask = 1
+dialogue = "uncomfortable"
 
 [node name="Block5" parent="World/Entities" index="8" instance=ExtResource("3_im01n")]
 position = Vector2(216, 104)
 collision_layer = 1
 collision_mask = 1
+dialogue = "falling"
 
 [node name="Block6" parent="World/Entities" index="9" instance=ExtResource("3_im01n")]
 position = Vector2(184, 56)
 collision_layer = 1
 collision_mask = 1
+dialogue = "stuck"
 
 [node name="Block7" parent="World/Entities" index="10" instance=ExtResource("3_im01n")]
 position = Vector2(184, 40)
 collision_layer = 1
 collision_mask = 1
+dialogue = "doomed"
 
 [node name="Block8" parent="World/Entities" index="11" instance=ExtResource("3_im01n")]
 position = Vector2(88, 104)
 collision_layer = 1
 collision_mask = 1
+dialogue = "dusted"
 
 [node name="Block9" parent="World/Entities" index="12" instance=ExtResource("3_im01n")]
 position = Vector2(104, 72)
 collision_layer = 1
 collision_mask = 1
+dialogue = "friend"

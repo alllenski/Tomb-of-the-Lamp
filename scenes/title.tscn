@@ -97,7 +97,7 @@ centered = false
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_xkg7i")
 autoplay = "default"
-frame_progress = 0.288759
+frame_progress = 0.491013
 centered = false
 
 [node name="Transition" type="ColorRect" parent="."]

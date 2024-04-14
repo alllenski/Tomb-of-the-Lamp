@@ -20,6 +20,7 @@ buttons = [NodePath("../Button")]
 
 [node name="Block2" parent="World/Entities" index="2" instance=ExtResource("2_3aw7q")]
 position = Vector2(168, 120)
+dialogue = "lonely"
 
 [node name="Button" parent="World/Entities" index="3" instance=ExtResource("3_aywwc")]
 position = Vector2(168, 56)

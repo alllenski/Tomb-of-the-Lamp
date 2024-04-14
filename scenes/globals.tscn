@@ -1,6 +1,56 @@
-[gd_scene load_steps=2 format=3 uid="uid://bjhirdjwew3k8"]
+[gd_scene load_steps=13 format=3 uid="uid://bjhirdjwew3k8"]
 
 [ext_resource type="Script" path="res://scenes/globals.gd" id="1_au6e2"]
+[ext_resource type="Script" path="res://scenes/music_player.gd" id="2_7ice8"]
+[ext_resource type="Script" path="res://scenes/sfx_player.gd" id="3_7dg80"]
+[ext_resource type="AudioStream" uid="uid://qe73whlhjrww" path="res://audio/bgm/bgm_main.mp3" id="3_hsrnr"]
+[ext_resource type="AudioStream" uid="uid://csmvfjnxt6dn5" path="res://audio/sfx/sfx_explosion.wav" id="4_65mn8"]
+[ext_resource type="AudioStream" uid="uid://ctnukepgf415o" path="res://audio/sfx/sfx_lamp_get.mp3" id="5_44t48"]
+[ext_resource type="AudioStream" uid="uid://c0ottg0sk4lpe" path="res://audio/sfx/sfx_restart.wav" id="6_tq7xj"]
+[ext_resource type="AudioStream" uid="uid://cigh6n5ey13nq" path="res://audio/sfx/sfx_step.wav" id="7_0j6h0"]
+[ext_resource type="AudioStream" uid="uid://b75vjc5hxncvi" path="res://audio/sfx/sfx_summon.wav" id="8_o8u7v"]
+[ext_resource type="AudioStream" uid="uid://x3up1ce0446u" path="res://audio/sfx/sfx_unsummon.wav" id="9_yc7y3"]
+[ext_resource type="AudioStream" uid="uid://jdibbiuhejea" path="res://audio/sfx/sfx_type.wav" id="11_kd6al"]
+[ext_resource type="AudioStream" uid="uid://bfkgnpj8444v4" path="res://audio/sfx/sfx_pull.wav" id="12_yd34v"]
 
 [node name="Globals" type="Node"]
 script = ExtResource("1_au6e2")
+
+[node name="MusicPlayer" type="Node" parent="."]
+script = ExtResource("2_7ice8")
+
+[node name="Main" type="AudioStreamPlayer" parent="MusicPlayer"]
+stream = ExtResource("3_hsrnr")
+volume_db = -10.0
+
+[node name="SFXPlayer" type="Node" parent="."]
+script = ExtResource("3_7dg80")
+
+[node name="Explosion" type="AudioStreamPlayer" parent="SFXPlayer"]
+stream = ExtResource("4_65mn8")
+volume_db = -10.0
+
+[node name="LampGet" type="AudioStreamPlayer" parent="SFXPlayer"]
+stream = ExtResource("5_44t48")
+
+[node name="Restart" type="AudioStreamPlayer" parent="SFXPlayer"]
+stream = ExtResource("6_tq7xj")
+volume_db = -10.0
+
+[node name="Step" type="AudioStreamPlayer" parent="SFXPlayer"]
+stream = ExtResource("7_0j6h0")
+
+[node name="Summon" type="AudioStreamPlayer" parent="SFXPlayer"]
+stream = ExtResource("8_o8u7v")
+volume_db = -10.0
+
+[node name="Unsummon" type="AudioStreamPlayer" parent="SFXPlayer"]
+stream = ExtResource("9_yc7y3")
+volume_db = -10.0
+
+[node name="Type" type="AudioStreamPlayer" parent="SFXPlayer"]
+stream = ExtResource("11_kd6al")
+volume_db = -10.0
+
+[node name="Pull" type="AudioStreamPlayer" parent="SFXPlayer"]
+stream = ExtResource("12_yd34v")
