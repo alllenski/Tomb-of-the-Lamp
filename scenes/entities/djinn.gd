@@ -39,3 +39,10 @@ func pull(target_position : Vector2):
 	movement = movement.normalized()
 	global_position += movement * tile_size
 	is_stunned = true
+	
+
+func unsummon():
+	var explosion = explosion_scene.instantiate()
+	explosion.global_position = global_position
+	Globals.level.effects.add_child(explosion)
+	queue_free()

@@ -69,13 +69,19 @@ func interact(direction):
 			collider.unsummon()
 			regain_ghost()
 			return true
-		elif collider.dialogue == null:
+		elif collider.name == "Lamp":
+			has_lamp = true
+			Globals.level.show_image()
+			return true
+		elif collider.dialogue != null:
 			talk(collider.dialogue)
 			return true
+	elif has_ghost:
+		summon(position + directions[direction] * tile_size)
+		return true
 	if has_lamp:
 		ray_cast.target_position = directions[direction] * tile_size * 16
 		ray_cast.set_collision_mask(pow(2, 2-1))
-		print(ray_cast.get_collision_mask())
 		ray_cast.force_raycast_update()
 		ray_cast.collision_mask = 1
 		if ray_cast.is_colliding():
@@ -90,8 +96,14 @@ func talk(dialogue):
 	print(dialogue)
 
 
-func summon():
+func summon(target_position):
 	has_ghost = false
+	halo_sprite.hide()
+	var djinn = djinn_scene.instantiate()
+	djinn.global_position = target_position
+	djinn.is_stunned = true
+	djinn.direction = sprite.animation
+	Globals.level.entities.add_child(djinn)
 	
 	
 func regain_ghost():

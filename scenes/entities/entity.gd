@@ -5,7 +5,11 @@ extends Area2D
 
 @export var is_pushable := false
 @export var is_explosive := false
-@export var explosion_scene : PackedScene
+
+var explosion_scene = preload("res://scenes/effects/explosion.tscn")
+var puff_scene = preload("res://scenes/effects/puff.tscn")
+
+
 
 @export_multiline var dialogue : String
 
@@ -40,6 +44,9 @@ func check(direction):
 			
 			
 func move(direction):
+	var puff = puff_scene.instantiate()
+	puff.global_position = global_position
+	Globals.level.effects.add_child(puff)
 	global_position += directions[direction] * tile_size
 	
 	

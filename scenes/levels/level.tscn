@@ -232,13 +232,11 @@ position = Vector2(104, 88)
 collision_layer = 1
 collision_mask = 1
 djinn_scene = ExtResource("6_p77wm")
-explosion_scene = null
 dialogue = ""
 
 [node name="Exit" parent="World/Entities" instance=ExtResource("6_nmnl4")]
 position = Vector2(216, 88)
 collision_mask = 1
-explosion_scene = null
 dialogue = ""
 
 [node name="Effects" type="Node2D" parent="World"]

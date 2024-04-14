@@ -51,3 +51,29 @@ func change_scene():
 		get_tree().change_scene_to_file(next_level_path)
 	else:
 		get_tree().reload_current_scene()
+
+
+func show_image():
+	player.is_controllable = false
+	transition.material.set_shader_parameter("cutoff", 1.0)
+	transition.material.set_shader_parameter("mask", load("res://masks/mask_radial_close.png"))
+	var tween = get_tree().create_tween()
+	tween.tween_method(set_shader_value, 1.0, 0.0, 0.6)
+	await tween.finished
+	$ImageScene.show()
+	$World/Entities/Lamp.queue_free()
+	transition.material.set_shader_parameter("mask", load("res://masks/mask_radial_open.png"))
+	tween = get_tree().create_tween()
+	tween.tween_method(set_shader_value, 0.0, 1.0, 0.6)
+	await tween.finished
+	await get_tree().create_timer(4.0).timeout
+	transition.material.set_shader_parameter("mask", load("res://masks/mask_radial_close.png"))
+	tween = get_tree().create_tween()
+	tween.tween_method(set_shader_value, 1.0, 0.0, 0.6)
+	await tween.finished
+	$ImageScene.hide()
+	transition.material.set_shader_parameter("mask", load("res://masks/mask_radial_open.png"))
+	tween = get_tree().create_tween()
+	tween.tween_method(set_shader_value, 0.0, 1.0, 0.6)
+	await tween.finished
+	player.is_controllable = true
